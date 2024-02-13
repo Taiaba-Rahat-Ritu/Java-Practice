@@ -11,10 +11,11 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Table;
 import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
 import java.util.Scanner;
 
 public class generatePDF2 {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, MalformedURLException {
 
 
         String path = "invoice2.pdf";
