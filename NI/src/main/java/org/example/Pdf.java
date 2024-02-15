@@ -13,6 +13,7 @@ import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.TextAlignment;
 
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
@@ -26,13 +27,16 @@ public class Pdf {
         pdfDocument.setDefaultPageSize(PageSize.A4);
         Document document = new Document(pdfDocument);
 
-        Paragraph hr = new Paragraph();
+
 
 
         document.add(Header.createHeaderTable());
         document.add(Header.createCompanyContact().setMarginLeft(20f));
         document.add(Header.createHr());
         document.add(Header.createHeaderTable2().setMarginLeft(27f));
+        document.add(Accomodation.productDescription());
+        document.add(GhuddyTnC.createTableTnCHeading().setMarginTop(20f));
+        document.add(GhuddyTnC.createGhuddyTnCTable().setMarginLeft(10f).setMarginRight(10f).setFontSize(10f));
         MyEventHandler eventHandler = new MyEventHandler(document);
         pdfDocument.addEventHandler(PdfDocumentEvent.END_PAGE, eventHandler);
 
