@@ -1,11 +1,17 @@
 package org.example;
 
 import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import org.example.order;
 
 public class Body {
+
+    Paragraph order = new Paragraph("ORDER DETAILS :").setFontSize(15f);
     static Table createOrderDetailsTable(order[] orders, float col3) {
+
+
+
         Table orderDetails = new Table(new float[]{col3 / 5, col3 / 4, col3 / 3, col3 / 3, col3 / 3});
         orderDetails.addCell(new Cell().add("No.").setBold());
         orderDetails.addCell(new Cell().add("Title ").setBold());

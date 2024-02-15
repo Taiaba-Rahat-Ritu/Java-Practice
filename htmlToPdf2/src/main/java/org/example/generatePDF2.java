@@ -9,6 +9,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfPage;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
@@ -82,7 +83,9 @@ public class generatePDF2 {
         document.add(Header.createHeader2(u));
 
         /*document.add(Body.createFooterParagraph());*/
-        document.add(Body.createOrderDetailsTable(orders, col3));
+        Paragraph order = new Paragraph("ORDER DETAILS :").setFontSize(15f);
+        document.add(order);
+        document.add(Body.createOrderDetailsTable( orders, col3));
         document.add(Footer.createHRTable(new float[]{col3}));
         /*document.add(Footer.createFooterTable());*/
 

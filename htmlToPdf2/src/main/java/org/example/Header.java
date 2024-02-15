@@ -79,13 +79,13 @@ public class Header {
             headerTable.addCell(new Cell().add("Email : support@ghuddy.com").setBorder(Border.NO_BORDER).setPaddingBottom(20f).setFontSize(10f));
 */
         Paragraph paragraph = new Paragraph("Thank you for your interest in Ghuddy Limited. We are pleased to confirm the following reservation details for your kind reference.").setFontSize(9f).setPaddingBottom(20f);
-        Paragraph p1 = new Paragraph("Customer Name : "+ user.getCustomerName()).setPaddingBottom(20f).setFontSize(10f).setBold();
-        Paragraph p2 = new Paragraph("Phone : "+ user.getCustomerPhone()).setPaddingBottom(20f).setFontSize(10f).setBold();
-        Paragraph p3 = new Paragraph("Email : "+user.getCustomerEmail()).setPaddingBottom(20f).setFontSize(10f).setBold();
-        Paragraph p4 = new Paragraph("Checkin Date : "+user.getCheckinDate()).setPaddingBottom(20f).setFontSize(10f).setBold();
-        Paragraph p5 = new Paragraph("Checkout Date : "+user.getCheckoutDate()).setPaddingBottom(20f).setFontSize(10f).setBold();
-        headerTable.addCell(new Cell().add("\n").setBorder(Border.NO_BORDER).setPaddingBottom(20f).setFontSize(10f)).setBold();
-        headerTable.addCell(new Cell().add(paragraph).setBorder(Border.NO_BORDER).setPaddingBottom(20f).setFontSize(10f)).setBold();
+        Paragraph p1 = new Paragraph("Customer Name : "+ user.getCustomerName()).setPaddingBottom(10f).setFontSize(10f).setBold();
+        Paragraph p2 = new Paragraph("Phone : "+ user.getCustomerPhone()).setPaddingBottom(5f).setFontSize(10f).setBold();
+        Paragraph p3 = new Paragraph("Email : "+user.getCustomerEmail()).setPaddingBottom(5f).setFontSize(10f).setBold();
+        Paragraph p4 = new Paragraph("Checkin Date : "+user.getCheckinDate()).setPaddingBottom(5f).setFontSize(10f).setBold();
+        Paragraph p5 = new Paragraph("Checkout Date : "+user.getCheckoutDate()).setPaddingBottom(5f).setFontSize(10f).setBold();
+        headerTable.addCell(new Cell().add("\n").setBorder(Border.NO_BORDER).setPaddingBottom(5f).setFontSize(10f)).setBold();
+        headerTable.addCell(new Cell().add(paragraph).setBorder(Border.NO_BORDER).setPaddingBottom(5f).setFontSize(10f)) ;
         headerTable.addCell(new Cell().add(p1).setBorder(Border.NO_BORDER).setPaddingBottom(20f).setFontSize(10f));
         headerTable.addCell(new Cell().add(p2).setBorder(Border.NO_BORDER).setPaddingBottom(20f).setFontSize(10f));
         headerTable.addCell(new Cell().add(p3).setBorder(Border.NO_BORDER).setPaddingBottom(20f).setFontSize(10f));
