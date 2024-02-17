@@ -1,22 +1,51 @@
 package org.example;
+import org.example.*;
 
+import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.DeviceRgb;
+import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.TextAlignment;
 
-public class Food {
 
-    float foodCol = 530f;
-    Paragraph foodTable = new Paragraph("FOOD").setFontSize(15f);
+public class Food  {
+    static Paragraph Food() {
+        Color darkCyan = new DeviceRgb(54, 101, 117);
+        Paragraph foodHeading = new Paragraph("FOOD").setBold().setFontColor(darkCyan).setFontSize(13f).setBorder(Border.NO_BORDER)
+                .setTextAlignment(TextAlignment.LEFT);
 
-   /* static Table foodDay1Table(day1[] day1Food, float foodCol){
-        Table foodDay1 = new Table(new float[]{foodCol/3, foodCol/3, foodCol/3});
-        foodDay1.addCell(new Cell().add("Breakfast: "));
-        foodDay1.addCell(new Cell().add("Lunch: "));
-        foodDay1.addCell(new Cell().add("Dinner: "));
+        return foodHeading;
+    }
 
-        for(day1 food : day1Food){
-            foodDay1.addCell(new Cell().add());
+    static Table foodTable(){
+        float column4 = 520f;
+        float columns[] = {column4/4, column4/3, column4/3};
+        Color darkCyan = new DeviceRgb(54, 101, 117);
+        Table foodTableN = new Table(columns);
+
+        FoodVariable[] foods = {
+                new FoodVariable("Included", "Included", "Included"),
+                new FoodVariable("Included", "Included", "Included"),
+                new FoodVariable("Included", "Included", "Included"),
+
+
+        };
+
+
+        Table foodTable = new Table(new float[]{column4/4, column4/3, column4/3});
+        foodTableN.addCell(new Cell().add("Breakfast ").setBold());
+        foodTableN.addCell(new Cell().add("Lunch ").setBold());
+        foodTableN.addCell(new Cell().add("Dinner ").setBold());
+
+        for (FoodVariable f1 : foods) {
+            foodTableN.addCell(new Cell().add(f1.getBreakfast()));
+            foodTableN.addCell(new Cell().add(f1.getLunch()));
+            foodTableN.addCell(new Cell().add(f1.getDinner()));
+
         }
-    }*/
+
+        return foodTableN;
+    }
 }

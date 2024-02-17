@@ -34,9 +34,14 @@ public class Pdf {
         document.add(Header.createCompanyContact().setMarginLeft(20f));
         document.add(Header.createHr());
         document.add(Header.createHeaderTable2().setMarginLeft(27f));
-        document.add(Accomodation.productDescription());
-        document.add(GhuddyTnC.createTableTnCHeading().setMarginTop(20f));
-        document.add(GhuddyTnC.createGhuddyTnCTable().setMarginLeft(10f).setMarginRight(10f).setFontSize(10f));
+        document.add(Accommodation.accommodation().setMarginTop(20f).setMarginLeft(27f));
+        document.add(Accommodation.accommodationTable().setMarginLeft(27f).setMarginRight(20f));
+        document.add(Transportation.Transportation().setMarginTop(20f).setMarginLeft(27f));
+        document.add(Transportation.transportationTable().setMarginLeft(27f));
+        document.add(Food.Food().setMarginTop(20f).setMarginLeft(27f));
+        document.add(Food.foodTable().setMarginLeft(27f));
+        document.add(GhuddyTnC.createTableTnCHeading().setMarginTop(20f).setMarginLeft(27f));
+        document.add(GhuddyTnC.createGhuddyTnCTable().setMarginLeft(27f).setMarginRight(10f).setFontSize(10f));
         MyEventHandler eventHandler = new MyEventHandler(document);
         pdfDocument.addEventHandler(PdfDocumentEvent.END_PAGE, eventHandler);
 
