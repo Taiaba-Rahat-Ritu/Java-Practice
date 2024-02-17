@@ -1,5 +1,4 @@
 package org.example;
- import org.example.*;
 
 import com.itextpdf.kernel.color.Color;
 import com.itextpdf.kernel.color.DeviceRgb;

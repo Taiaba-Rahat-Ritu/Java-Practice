@@ -37,8 +37,15 @@ public class Pdf {
         document.add(Accommodation.accommodation().setMarginTop(20f).setMarginLeft(27f));
         document.add(Accommodation.accommodationTable().setMarginLeft(27f).setMarginRight(20f));
         document.add(Transportation.Transportation().setMarginTop(20f).setMarginLeft(27f));
-        document.add(Transportation.transportationTable().setMarginLeft(27f));
-        document.add(Food.Food().setMarginTop(20f).setMarginLeft(27f));
+        document.add(Transportation.transportationTable().setMarginLeft(27f).setMarginBottom(20f));
+        document.add(ProductDescription.createHr());
+        document.add(ProductDescription.ProductDescription());
+        document.add(ProductDescription.createHr());
+        document.add(ProductDescription.productDescription(new TourVariable()).setMarginLeft(27f).setMarginBottom(80f));
+        document.add(PurchasedAmenities.createHr());
+        document.add(PurchasedAmenities.PurchasedAmenities());
+        document.add(PurchasedAmenities.createHr());
+        document.add(Food.Food().setMarginTop(10f).setMarginLeft(27f));
         document.add(Food.foodTable().setMarginLeft(27f));
         document.add(GhuddyTnC.createTableTnCHeading().setMarginTop(20f).setMarginLeft(27f));
         document.add(GhuddyTnC.createGhuddyTnCTable().setMarginLeft(27f).setMarginRight(10f).setFontSize(10f));

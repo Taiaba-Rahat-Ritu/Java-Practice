@@ -67,17 +67,7 @@ public class Header {
         Color slateblue = new DeviceRgb(11, 80, 79);
 
         Table headerTable = new Table(1);
-         /*   headerTable.addCell(new Cell().add("Ghuddy").setBorder(Border.NO_BORDER).setBold().setFontSize(20f).setFontColor(slateblue));
-            headerTable.addCell(new Cell().add("Reservation Confirmation").setBorder(Border.NO_BORDER).setFontSize(20f).setPaddingLeft(100f));
-*/
 
-           /* headerTable.addCell(new Cell().add("Date :").setBorder(Border.NO_BORDER).setPaddingTop(20f).setFontSize(15f));
-            headerTable.addCell(new Cell().add("INVOICE DATE :").setBorder(Border.NO_BORDER).setPaddingTop(20f).setFontSize(15f));
-            headerTable.addCell(new Cell().add("Company : Ghuddy Limited").setBorder(Border.NO_BORDER).setFontSize(10f));
-            headerTable.addCell(new Cell().add("Order :").setBold().setBorder(Border.NO_BORDER).setFontSize(10f));
-            headerTable.addCell(new Cell().add("Phone : +88001797078379").setBorder(Border.NO_BORDER).setPaddingBottom(20f).setFontSize(10f));
-            headerTable.addCell(new Cell().add("Email : support@ghuddy.com").setBorder(Border.NO_BORDER).setPaddingBottom(20f).setFontSize(10f));
-*/
         Paragraph paragraph = new Paragraph("Thank you for your interest in Ghuddy Limited. We are pleased to confirm the following reservation details for your kind reference.").setFontSize(9f).setPaddingBottom(20f);
         Paragraph p1 = new Paragraph("Customer Name : "+ user.getCustomerName()).setPaddingBottom(10f).setFontSize(10f).setBold();
         Paragraph p2 = new Paragraph("Phone : "+ user.getCustomerPhone()).setPaddingBottom(5f).setFontSize(10f).setBold();
