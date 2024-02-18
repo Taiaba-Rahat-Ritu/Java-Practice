@@ -45,20 +45,22 @@ public class Pdf {
         document.add(PurchasedAmenities.createHr());
         document.add(PurchasedAmenities.PurchasedAmenities());
         document.add(PurchasedAmenities.createHr());
-        document.add(Accommodation.accommodation().setMarginTop(20f).setMarginLeft(27f));
+        document.add(Accommodation.accommodation().setMarginTop(10f).setMarginLeft(27f));
         document.add(Accommodation.accommodationTable().setMarginLeft(27f).setMarginRight(20f).setFontSize(10f));
-        document.add(Food.Food().setMarginLeft(27f));
+        document.add(Food.Food().setMarginLeft(27f).setMarginTop(20f));
         document.add(Food.foodTable().setMarginLeft(27f).setFontSize(10f));
-        document.add(Transfer.Transfer().setMarginTop(20f).setMarginLeft(27f));
+        document.add(Transfer.Transfer().setMarginTop(25f).setMarginLeft(27f));
         document.add(Transfer.transferTable().setMarginLeft(27f).setMarginBottom(10f).setFontSize(10f));
-        document.add(Transportation.Transportation().setMarginTop(20f).setMarginLeft(27f));
-        document.add(Transportation.transportationTable().setMarginLeft(27f).setMarginBottom(10f).setFontSize(10f));
+        document.add(Transportation.Transportation().setMarginTop(10f).setMarginLeft(27f));
+        document.add(Transportation.transportationTable().setMarginLeft(27f).setMarginBottom(20f).setFontSize(10f));
         document.add(PaidSpots.PaidSpots().setMarginLeft(27f));
-        document.add(PaidSpots.paidSpotTable().setMarginLeft(27f));
-        document.add(Guide.Guide().setMarginLeft(27f).setMarginTop(10f));
+        document.add(PaidSpots.paidSpotTable().setMarginLeft(27f).setFontSize(10f));
+        document.add(Guide.Guide().setMarginLeft(27f).setMarginTop(20f));
         document.add(Guide.guideTable(new GuideVariable()).setMarginLeft(27f));
-        document.add(GhuddyTnC.createTableTnCHeading().setMarginTop(40f).setMarginLeft(27f));
+        document.add(GhuddyTnC.createTableTnCHeading().setMarginTop(20f).setMarginLeft(27f));
         document.add(GhuddyTnC.createGhuddyTnCTable().setMarginLeft(27f).setMarginRight(10f).setFontSize(10f));
+        document.add(new Paragraph(" "));
+        document.add(new Paragraph(" "));
         MyEventHandler eventHandler = new MyEventHandler(document);
         pdfDocument.addEventHandler(PdfDocumentEvent.END_PAGE, eventHandler);
 
@@ -86,7 +88,7 @@ public class Pdf {
                 footerTable.setFixedPosition(x, y, page.getPageSize().getWidth() - 40);
 
 
-                document.add(footerTable);
+                document.add(footerTable).setTopMargin(20f);
 
 
             }

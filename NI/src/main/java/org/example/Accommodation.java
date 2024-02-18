@@ -30,6 +30,7 @@ public class Accommodation  {
         hotels.add(new Hotel(1, "Hotel 1", "6001", "abc"));
         hotels.add(new Hotel(2, "Hotel 2", "1021", "abc"));
         hotels.add(new Hotel(3, "Hotel 3", "2021", "abc"));
+        hotels.add(new Hotel(4, "Hotel 4", "2021", "abc"));
 
         for (Hotel hotel : hotels) {
             System.out.println("Night: " + hotel.night +

@@ -30,6 +30,7 @@ public class PaidSpots {
         paidSpots.add(new PaidSpotVariable(2, "Spot 2", "Yes"));
         paidSpots.add(new PaidSpotVariable(3, "Spot 3", "No"));
 
+
         for (PaidSpotVariable paidSpot : paidSpots) {
             System.out.println("Serial No : " + paidSpot.serialNo +
                     ", Spot Name : " + paidSpot.spotName +
