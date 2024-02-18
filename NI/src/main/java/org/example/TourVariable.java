@@ -4,19 +4,35 @@ package org.example;
 
 
 public class TourVariable {
-    String tourStartDate = "2024-02-17";
-    String tourReportingDate = "2024-02-20";
-    String tourReportingTime = "10:00 AM";
-    int quantity = 1;
+    String title = "Cox's Bazar";
+    String description = "abc";
+    String tourStartDate = "2024-02-20";
+    String duration = "3 Days 2 Nights";
 
     public TourVariable() {
     }
 
-    public TourVariable(String tourStartDate, String tourReportingDate, String tourReportingTime, int quantity) {
+    public TourVariable(String title, String description, String tourStartDate, String duration) {
+        this.title = title;
+        this.description = description;
         this.tourStartDate = tourStartDate;
-        this.tourReportingDate = tourReportingDate;
-        this.tourReportingTime = tourReportingTime;
-        this.quantity = quantity;
+        this.duration = duration;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getTourStartDate() {
@@ -27,27 +43,11 @@ public class TourVariable {
         this.tourStartDate = tourStartDate;
     }
 
-    public String getTourReportingDate() {
-        return tourReportingDate;
+    public String getDuration() {
+        return duration;
     }
 
-    public void setTourReportingDate(String tourReportingDate) {
-        this.tourReportingDate = tourReportingDate;
-    }
-
-    public String getTourReportingTime() {
-        return tourReportingTime;
-    }
-
-    public void setTourReportingTime(String tourReportingTime) {
-        this.tourReportingTime = tourReportingTime;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 }

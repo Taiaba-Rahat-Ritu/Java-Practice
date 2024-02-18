@@ -16,7 +16,7 @@ public class PurchasedAmenities {
     }
     static Paragraph PurchasedAmenities() {
         Color darkCyan = new DeviceRgb(54, 101, 117);
-        Paragraph amenitiesHeading = new Paragraph("Purchased Amenities").setBold().setFontColor(darkCyan).setFontSize(15f).setBorder(Border.NO_BORDER).setMarginTop(-10f).setMarginBottom(-10f)
+        Paragraph amenitiesHeading = new Paragraph("Purchased Amenities").setBold().setFontColor(darkCyan).setFontSize(12f).setBorder(Border.NO_BORDER).setMarginTop(-10f).setMarginBottom(-10f)
                 .setTextAlignment(TextAlignment.CENTER);
 
         return amenitiesHeading;

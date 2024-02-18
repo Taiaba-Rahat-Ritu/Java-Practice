@@ -8,11 +8,13 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 
+import java.util.LinkedList;
+
 
 public class Transportation  {
     static Paragraph Transportation() {
         Color darkCyan = new DeviceRgb(54, 101, 117);
-        Paragraph transportationHeading = new Paragraph("TRANSPORTATION").setBold().setFontColor(darkCyan).setFontSize(13f).setBorder(Border.NO_BORDER)
+        Paragraph transportationHeading = new Paragraph("TRANSPORTATION").setBold().setFontColor(darkCyan).setFontSize(12f).setBorder(Border.NO_BORDER)
                 .setTextAlignment(TextAlignment.LEFT);
 
         return transportationHeading;
@@ -24,13 +26,17 @@ public class Transportation  {
         Color darkCyan = new DeviceRgb(54, 101, 117);
         Table transportationTableN = new Table(columns);
 
-        Transport[] transports = {
-                new Transport(1, "route 1", " abc"),
-                new Transport(2, "route 2", " abc"),
-                new Transport(3, "route 3", " abc"),
+        LinkedList<Transport> transports = new LinkedList<>();
 
+        transports.add(new Transport(1, "route 1", "abc"));
+        transports.add(new Transport(2, "route 2", "abc"));
+        transports.add(new Transport(3, "route 3", "abc"));
 
-        };
+        for (Transport transport : transports) {
+            System.out.println("Slot No: " + transport.slotNumber +
+                    ", Route : " + transport.route +
+                    ", Description: " + transport.description);
+        }
 
 
         Table transportationTable = new Table(new float[]{column4/4, column4/3, column4/3});

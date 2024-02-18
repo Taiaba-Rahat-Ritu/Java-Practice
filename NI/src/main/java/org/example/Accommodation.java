@@ -8,10 +8,12 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 
+import java.util.LinkedList;
+
 public class Accommodation  {
     static Paragraph accommodation() {
         Color darkCyan = new DeviceRgb(54, 101, 117);
-        Paragraph accommodationHeding = new Paragraph("ACCOMMODATION").setBold().setFontColor(darkCyan).setFontSize(13f).setBorder(Border.NO_BORDER)
+        Paragraph accommodationHeding = new Paragraph("ACCOMMODATION").setBold().setFontColor(darkCyan).setFontSize(12f).setBorder(Border.NO_BORDER)
                 .setTextAlignment(TextAlignment.LEFT);
 
         return accommodationHeding;
@@ -23,15 +25,18 @@ public class Accommodation  {
         Color darkCyan = new DeviceRgb(54, 101, 117);
         Table accomodationTableN = new Table(columns);
 
-        Hotel[] hotels = {
-                new Hotel(1, "Hotel 1", " G001", "abc"),
-                new Hotel(2, "Hotel 2", " 1021", "abc"),
-                new Hotel(3, "Hotel 3", " 2021", "abc"),
+        LinkedList<Hotel> hotels = new LinkedList<>();
 
+        hotels.add(new Hotel(1, "Hotel 1", "6001", "abc"));
+        hotels.add(new Hotel(2, "Hotel 2", "1021", "abc"));
+        hotels.add(new Hotel(3, "Hotel 3", "2021", "abc"));
 
-
-
-        };
+        for (Hotel hotel : hotels) {
+            System.out.println("Night: " + hotel.night +
+                    ", Hotel Name: " + hotel.hotelName +
+                    ", Room: " + hotel.room +
+                    ", Remarks: " + hotel.remarks);
+        }
 
         Table accommodationTable = new Table(new float[]{column4/4, column4/3, column4/3, column4/2});
         accomodationTableN.addCell(new Cell().add("Night").setBold());

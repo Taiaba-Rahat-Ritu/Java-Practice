@@ -9,6 +9,8 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 
+import java.util.LinkedList;
+
 
 public class Food  {
     static Paragraph Food() {
@@ -25,13 +27,17 @@ public class Food  {
         Color darkCyan = new DeviceRgb(54, 101, 117);
         Table foodTableN = new Table(columns);
 
-        FoodVariable[] foods = {
-                new FoodVariable("Included", "Included", "Included"),
-                new FoodVariable("Included", "Included", "Included"),
-                new FoodVariable("Included", "Included", "Included"),
+        LinkedList<FoodVariable> foods = new LinkedList<>();
 
+        foods.add(new FoodVariable("Included", "Included", "Included"));
+        foods.add(new FoodVariable("Included", "Included", "Included"));
+        foods.add(new FoodVariable("Included", "Included", "Included"));
 
-        };
+        for (FoodVariable food : foods) {
+            System.out.println("Night: " + food.breakfast +
+                    ", Hotel Name: " + food.lunch +
+                    ", Room: " + food.dinner);
+        }
 
 
         Table foodTable = new Table(new float[]{column4/4, column4/3, column4/3});
