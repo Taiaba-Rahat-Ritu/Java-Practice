@@ -11,26 +11,19 @@ import com.itextpdf.layout.property.TextAlignment;
 import java.util.LinkedList;
 
 public class Accommodation  {
-    static Paragraph accommodation() {
-        Color darkCyan = new DeviceRgb(54, 101, 117);
-        Paragraph accommodationHeding = new Paragraph("ACCOMMODATION").setBold().setFontColor(darkCyan).setFontSize(12f).setBorder(Border.NO_BORDER)
+    public Paragraph accommodation(Color textColor1) {
+        Paragraph accommodationHeading = new Paragraph("ACCOMMODATION").setBold().setFontColor(textColor1).setFontSize(12f).setBorder(Border.NO_BORDER)
                 .setTextAlignment(TextAlignment.LEFT);
 
-        return accommodationHeding;
+        return accommodationHeading;
     }
 
-    static Table accommodationTable(){
-        float column4 = 520f;
-        float columns[] = {column4/4, column4/3, column4/3, column4/2};
-        Color darkCyan = new DeviceRgb(54, 101, 117);
+    public Table accommodationTable(float col2,LinkedList<Hotel> hotels){
+
+        float columns[] = {col2/4, col2/3, col2/3, col2/2};
+
         Table accomodationTableN = new Table(columns);
 
-        LinkedList<Hotel> hotels = new LinkedList<>();
-
-        hotels.add(new Hotel(1, "Hotel 1", "6001", "abc"));
-        hotels.add(new Hotel(2, "Hotel 2", "1021", "abc"));
-        hotels.add(new Hotel(3, "Hotel 3", "2021", "abc"));
-        hotels.add(new Hotel(4, "Hotel 4", "2021", "abc"));
 
         for (Hotel hotel : hotels) {
             System.out.println("Night: " + hotel.night +
@@ -39,7 +32,6 @@ public class Accommodation  {
                     ", Remarks: " + hotel.remarks);
         }
 
-        Table accommodationTable = new Table(new float[]{column4/4, column4/3, column4/3, column4/2});
         accomodationTableN.addCell(new Cell().add("Night").setBold());
         accomodationTableN.addCell(new Cell().add("Accommodation Name ").setBold());
         accomodationTableN.addCell(new Cell().add("Room ").setBold());
@@ -56,3 +48,48 @@ public class Accommodation  {
         return accomodationTableN;
     }
 }
+
+
+/*package org.example;
+import com.itextpdf.kernel.color.Color;
+import com.itextpdf.layout.border.Border;
+import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.TextAlignment;
+
+import java.util.List;
+
+public class Accommodation {
+    public Paragraph createAccommodationHeading(String headingText, Color textColor1) {
+        return new Paragraph(headingText)
+                .setBold()
+                .setFontColor(textColor1)
+                .setFontSize(13f)
+                .setBorder(Border.NO_BORDER)
+                .setTextAlignment(TextAlignment.LEFT);
+    }
+
+    public Table createAccommodationTable(List<String[]> accommodationData, float[] columnWidths) {
+        Table foodTable = new Table(columnWidths);
+
+        // Add header row
+        Cell nightCell = new Cell().add(new Paragraph("Night").setBold());
+        Cell accommodationNameCell = new Cell().add(new Paragraph("Accommodation Name").setBold());
+        Cell roomCell = new Cell().add(new Paragraph("Room").setBold());
+        Cell remarkCell = new Cell().add(new Paragraph("Remark").setBold());
+        foodTable.addHeaderCell(nightCell);
+        foodTable.addHeaderCell(accommodationNameCell);
+        foodTable.addHeaderCell(roomCell);
+        foodTable.addHeaderCell(remarkCell);
+
+        // Add data rows
+        for (String[] rowData : accommodationData) {
+            for (String cellData : rowData) {
+                accommodationTable.addCell(new Cell().add(new Paragraph(cellData)));
+            }
+        }
+
+        return accommodationTable;
+    }
+}*/
