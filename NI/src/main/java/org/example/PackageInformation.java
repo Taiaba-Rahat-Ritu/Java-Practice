@@ -13,21 +13,19 @@ import java.util.Date;
 
 public class PackageInformation {
 
-    static Paragraph createHr(){
-        Color darkCyan = new DeviceRgb(54, 101, 117);
+    public Paragraph createHr(Color textColor1){
         Paragraph hr = new Paragraph();
-        hr.add("------------------------------------------------------------------------------------------------------------------------").setBold().setFontColor(darkCyan).setMarginLeft(26f);
+        hr.add("------------------------------------------------------------------------------------------------------------------------").setBold().setFontColor(textColor1).setMarginLeft(26f);
         return hr;
     }
-    static Paragraph PackageInfo() {
-        Color darkCyan = new DeviceRgb(54, 101, 117);
-        Paragraph packageHeading = new Paragraph("Package Information").setBold().setFontColor(darkCyan).setFontSize(12f).setBorder(Border.NO_BORDER).setMarginTop(-10f).setMarginBottom(-10f)
+    public Paragraph initiatePackageInfoHeading(Color textColor1) {
+        Paragraph packageHeading = new Paragraph("Package Information").setBold().setFontColor(textColor1).setFontSize(12f).setBorder(Border.NO_BORDER).setMarginTop(-10f).setMarginBottom(-10f)
                 .setTextAlignment(TextAlignment.CENTER);
 
         return packageHeading;
     }
 
-    static Table packageInformation(PackageVariable packageVariable){
+    public Table initiatePackageInformationTable(PackageVariable packageVariable){
         float twocol = 285f;
 
         Table packageTable = new Table(1);

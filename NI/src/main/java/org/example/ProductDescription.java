@@ -1,34 +1,28 @@
 package org.example;
 
 import com.itextpdf.kernel.color.Color;
-import com.itextpdf.kernel.color.DeviceRgb;
 import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 
-import java.sql.Time;
-import java.util.Date;
 
 public class ProductDescription {
 
-    static Paragraph createHr(){
-        Color darkCyan = new DeviceRgb(54, 101, 117);
+    public Paragraph createHr(Color textColor1){
         Paragraph hr = new Paragraph();
-        hr.add("------------------------------------------------------------------------------------------------------------------------").setBold().setFontColor(darkCyan).setMarginLeft(26f);
+        hr.add("------------------------------------------------------------------------------------------------------------------------").setBold().setFontColor(textColor1).setMarginLeft(26f);
         return hr;
     }
-    static Paragraph ProductDescription() {
-        Color darkCyan = new DeviceRgb(54, 101, 117);
-        Paragraph productHeading = new Paragraph("Product Description").setBold().setFontColor(darkCyan).setFontSize(12f).setBorder(Border.NO_BORDER).setMarginTop(-10f).setMarginBottom(-10f)
+    public Paragraph initiateProductDescription(Color textColor1) {
+        Paragraph initiateProductHeading = new Paragraph("Product Description").setBold().setFontColor(textColor1).setFontSize(12f).setBorder(Border.NO_BORDER).setMarginTop(-10f).setMarginBottom(-10f)
                 .setTextAlignment(TextAlignment.CENTER);
 
-        return productHeading;
+        return initiateProductHeading;
     }
 
-    static Table productDescription(TourVariable tourVariable){
-        float twocol = 285f;
+    public Table InitiateProductDescriptionTable(TourVariable tourVariable){
 
         Table productTable = new Table(1);
 

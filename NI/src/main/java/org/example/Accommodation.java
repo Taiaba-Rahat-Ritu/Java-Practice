@@ -1,16 +1,18 @@
+
 package org.example;
 
 import com.itextpdf.kernel.color.Color;
-import com.itextpdf.kernel.color.DeviceRgb;
+
 import com.itextpdf.layout.border.Border;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 
-import java.util.LinkedList;
 
-public class Accommodation  {
+import java.util.List;
+
+public class Accommodation {
     public Paragraph accommodation(Color textColor1) {
         Paragraph accommodationHeading = new Paragraph("ACCOMMODATION").setBold().setFontColor(textColor1).setFontSize(12f).setBorder(Border.NO_BORDER)
                 .setTextAlignment(TextAlignment.LEFT);
@@ -18,34 +20,26 @@ public class Accommodation  {
         return accommodationHeading;
     }
 
-    public Table accommodationTable(float col2,LinkedList<Hotel> hotels){
+    public Table initiateAccommodationTable(float col2, List<Hotel> hotels){
 
-        float columns[] = {col2/4, col2/3, col2/3, col2/2};
+        float[] columns = {col2/4, col2/3, col2/3, col2/2};
 
-        Table accomodationTableN = new Table(columns);
+        Table accommodationTableN = new Table(columns);
+
+        accommodationTableN.addCell(new Cell().add("Night").setBold());
+        accommodationTableN.addCell(new Cell().add("Accommodation Name ").setBold());
+        accommodationTableN.addCell(new Cell().add("Room ").setBold());
+        accommodationTableN.addCell(new Cell().add("Remarks ").setBold());
 
 
-        for (Hotel hotel : hotels) {
-            System.out.println("Night: " + hotel.night +
-                    ", Hotel Name: " + hotel.hotelName +
-                    ", Room: " + hotel.room +
-                    ", Remarks: " + hotel.remarks);
-        }
-
-        accomodationTableN.addCell(new Cell().add("Night").setBold());
-        accomodationTableN.addCell(new Cell().add("Accommodation Name ").setBold());
-        accomodationTableN.addCell(new Cell().add("Room ").setBold());
-        accomodationTableN.addCell(new Cell().add("Remarks ").setBold());
 
         for (Hotel h1 : hotels) {
-            accomodationTableN.addCell(new Cell().add(String.valueOf(h1.getNight())));
-            accomodationTableN.addCell(new Cell().add(h1.getHotelName()));
-            accomodationTableN.addCell(new Cell().add(h1.getRoom()));
-            accomodationTableN.addCell(new Cell().add(h1.getRemarks()));
-
+            accommodationTableN.addCell(new Cell().add(String.valueOf(h1.getNight())));
+            accommodationTableN.addCell(new Cell().add(h1.getHotelName()));
+            accommodationTableN.addCell(new Cell().add(h1.getRoom()));
+            accommodationTableN.addCell(new Cell().add(h1.getRemarks()));
         }
 
-        return accomodationTableN;
+        return accommodationTableN;
     }
 }
-

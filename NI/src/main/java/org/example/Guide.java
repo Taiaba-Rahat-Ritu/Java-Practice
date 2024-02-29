@@ -9,18 +9,14 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 
 public class Guide {
-    static Paragraph Guide() {
-        Color darkCyan = new DeviceRgb(54, 101, 117);
-        Paragraph guideHeading = new Paragraph("GUIDE").setBold().setFontColor(darkCyan).setFontSize(12f).setBorder(Border.NO_BORDER)
+    public Paragraph initiateGuideHeading(Color textColor1) {
+        Paragraph guideHeading = new Paragraph("GUIDE").setBold().setFontColor(textColor1).setFontSize(12f).setBorder(Border.NO_BORDER)
                 .setTextAlignment(TextAlignment.LEFT);
 
         return guideHeading;
     }
 
-    static Table guideTable(GuideVariable guideVariable){
-        float column4 = 520f;
-        Color darkCyan = new DeviceRgb(54, 101, 117);
-
+    public Table initiateGuideTable(GuideVariable guideVariable){
 
         Table guideTable = new Table(1);
 

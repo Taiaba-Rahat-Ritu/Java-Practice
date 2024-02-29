@@ -9,26 +9,20 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class PaidSpots {
-    static Paragraph PaidSpots() {
-        Color darkCyan = new DeviceRgb(54, 101, 117);
-        Paragraph paidSpotsHeading = new Paragraph("PAID SPOTS : ").setBold().setFontColor(darkCyan).setFontSize(12f).setBorder(Border.NO_BORDER)
+    public Paragraph initiatePaidSpotsHeading(Color textColor1) {
+        Paragraph paidSpotsHeading = new Paragraph("PAID SPOTS : ").setBold().setFontColor(textColor1).setFontSize(12f).setBorder(Border.NO_BORDER)
                 .setTextAlignment(TextAlignment.LEFT);
 
         return paidSpotsHeading;
     }
-    static Table paidSpotTable(){
-        float column4 = 520f;
-        float columns[] = {column4/4, column4/3, column4/3};
-        Color darkCyan = new DeviceRgb(54, 101, 117);
+    public Table initiatePaidSpotTable(float col2, List<PaidSpotVariable> paidSpots){
+        float columns[] = {col2/4, col2/3, col2/3};
         Table paidSpotTableN = new Table(columns);
 
-        LinkedList<PaidSpotVariable> paidSpots = new LinkedList<>();
 
-        paidSpots.add(new PaidSpotVariable(1, "Spot 1", "Yes"));
-        paidSpots.add(new PaidSpotVariable(2, "Spot 2", "Yes"));
-        paidSpots.add(new PaidSpotVariable(3, "Spot 3", "No"));
 
 
         for (PaidSpotVariable paidSpot : paidSpots) {
@@ -37,8 +31,6 @@ public class PaidSpots {
                     ", Included: " + paidSpot.included);
         }
 
-
-        Table paidSpotTable = new Table(new float[]{column4/4, column4/3, column4/3});
         paidSpotTableN.addCell(new Cell().add("Serial No").setBold());
         paidSpotTableN.addCell(new Cell().add("Spot Name ").setBold());
         paidSpotTableN.addCell(new Cell().add("Included ").setBold());

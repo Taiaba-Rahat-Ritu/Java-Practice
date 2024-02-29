@@ -12,25 +12,17 @@ import java.util.LinkedList;
 
 
 public class Transfer  {
-    static Paragraph Transfer() {
-        Color darkCyan = new DeviceRgb(54, 101, 117);
-        Paragraph transferHeading = new Paragraph("TRANSFER").setBold().setFontColor(darkCyan).setFontSize(12f).setBorder(Border.NO_BORDER)
+    public Paragraph initiateTransferHeading(Color textColor1) {
+        Paragraph transferHeading = new Paragraph("TRANSFER").setBold().setFontColor(textColor1).setFontSize(12f).setBorder(Border.NO_BORDER)
                 .setTextAlignment(TextAlignment.LEFT);
 
         return transferHeading;
     }
 
-    static Table transferTable(){
-        float column4 = 520f;
-        float columns[] = {column4/4, column4/3, column4/3};
-        Color darkCyan = new DeviceRgb(54, 101, 117);
+    public Table initiateTransferTable(float col2, LinkedList<transferVariable> transfers){
+        float columns[] = {col2/4, col2/3, col2/3};
         Table transferTableN = new Table(columns);
 
-        LinkedList<transferVariable> transfers = new LinkedList<>();
-
-        transfers.add(new transferVariable(1, "route 1", "abc"));
-        transfers.add(new transferVariable(2, "route 2", "abc"));
-        transfers.add(new transferVariable(3, "route 3", "abc"));
 
         for (transferVariable transfer : transfers) {
             System.out.println("Slot Number : " + transfer.slotNumber +
@@ -39,7 +31,6 @@ public class Transfer  {
         }
 
 
-        Table transferTable = new Table(new float[]{column4/4, column4/3, column4/3});
         transferTableN.addCell(new Cell().add("Slot Number").setBold());
         transferTableN.addCell(new Cell().add("Route ").setBold());
         transferTableN.addCell(new Cell().add("Description ").setBold());

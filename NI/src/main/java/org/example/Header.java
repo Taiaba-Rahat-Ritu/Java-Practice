@@ -4,7 +4,6 @@ package org.example;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.color.Color;
-import com.itextpdf.kernel.color.DeviceRgb;
 
 
 import com.itextpdf.layout.border.Border;
@@ -18,7 +17,7 @@ public class Header {
 
 
     public Table initiateLogoAndTitle(float col1, float col2, float ghuddyLogoImageWidth, float ghuddyLogoImageHeight, Color textColor1, String ghuddyLogoImagePath) throws MalformedURLException {
-        float twoColumns[] = {col1, col2};
+        float[] twoColumns = {col1, col2};
 
 
         Table headerTable = new Table(twoColumns);
@@ -40,7 +39,7 @@ public class Header {
 
 
     public Table initiateCompanyContact(float col2, float iconImageWidth, float iconImageHeight, String phoneIconUrl, String emailIconUrl, String websiteIconUrl) throws MalformedURLException {
-        float threeColumn[] = {col2 / 3, col2 / 3, col2 / 3};
+        float[] threeColumn = {col2 / 3, col2 / 3, col2 / 3};
 
 
         Table companyContact = new Table(threeColumn);
@@ -102,22 +101,17 @@ public class Header {
         paragraph2.add(emailIconImage);
         paragraph2.add(new Text("  support@ghuddy.com").setFontSize(12f));
         cell2.add(paragraph2);
-        /*cell2.setPaddingLeft(20f)*/;
-        /*cell2.setPaddingRight(10f);*/
 
 
         Cell cell3 = new Cell();
         cell3.setBorder(Border.NO_BORDER);
-        /*cell3.setPaddingTop(7f);*/
+
 
 
         Paragraph paragraph3 = new Paragraph();
         paragraph3.add(websiteIconImage);
         paragraph3.add(new Text("  ghuddy.com").setFontSize(12f));
         cell3.add(paragraph3);
-        /*cell3.setPaddingLeft(10f);*/
-        /*cell3.setPaddingRight(10f);*/
-
 
         companyContact.addCell(cell1);
         companyContact.addCell(cell2);
@@ -208,12 +202,9 @@ public class Header {
 
 
     public Table createHeaderTable2(float col2, Color textColor1) {
-        float twoCol[] = {col2 / 2, col2 / 2};
-
-
+        float[] twoCol = {col2 / 2, col2 / 2};
 
         Table nestedTable = new Table(twoCol);
-
 
         nestedTable.addCell(new Cell().add("PAID BY").setBold().setFontColor(textColor1).setBorder(Border.NO_BORDER).setPaddingTop(10f).setFontSize(10f));
         nestedTable.addCell(new Cell().add("RESERVATION CONFIRMATION").setBold().setFontColor(textColor1).setBorder(Border.NO_BORDER).setPaddingTop(10f).setFontSize(10f).setPaddingLeft(70f));
