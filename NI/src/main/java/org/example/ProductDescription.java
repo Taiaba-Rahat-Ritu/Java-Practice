@@ -9,12 +9,7 @@ import com.itextpdf.layout.property.TextAlignment;
 
 
 public class ProductDescription {
-
-    public Paragraph createHr(Color textColor1){
-        Paragraph hr = new Paragraph();
-        hr.add("------------------------------------------------------------------------------------------------------------------------").setBold().setFontColor(textColor1).setMarginLeft(26f);
-        return hr;
-    }
+    
     public Paragraph initiateProductDescription(Color textColor1) {
         Paragraph initiateProductHeading = new Paragraph("Product Description").setBold().setFontColor(textColor1).setFontSize(12f).setBorder(Border.NO_BORDER).setMarginTop(-10f).setMarginBottom(-10f)
                 .setTextAlignment(TextAlignment.CENTER);

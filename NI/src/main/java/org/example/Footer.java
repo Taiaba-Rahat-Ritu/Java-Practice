@@ -1,18 +1,15 @@
 package org.example;
 
 import com.itextpdf.kernel.color.Color;
-import com.itextpdf.layout.border.Border;
-import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
 
 
 public class Footer {
 
-    public Table createFooterTable(Color textColor1, FooterVariable footerVariable, float width, float x, float y) {
+    public Paragraph createFooterParagraph(Color textColor1, FooterVariable footerVariable, float width, float x, float y) {
 
-        Table footerTable = new Table(1);
+        Paragraph footerParagraph = new Paragraph();
         Paragraph p1 = new Paragraph(footerVariable.footerParagraph1).setFontColor(textColor1).setFontSize(13f).setBold()
                 .setTextAlignment(TextAlignment.CENTER);
         Paragraph p2 = new Paragraph(footerVariable.footerParagraph2).setBold().setFontColor(textColor1)
@@ -24,16 +21,16 @@ public class Footer {
 
 
         //footerTable.setWidth(width);
-        footerTable.setFixedPosition(x, y, width);
+        footerParagraph.setFixedPosition(x, y, width);
 
 
-        footerTable.addCell(p1);
-        footerTable.addCell(p2);
-        footerTable.addCell(p3);
-        footerTable.addCell(p4);
+        footerParagraph.add(p1).setTextAlignment(TextAlignment.CENTER);
+        footerParagraph.add(p2).setTextAlignment(TextAlignment.CENTER);
+        footerParagraph.add(p3).setTextAlignment(TextAlignment.CENTER);
+        footerParagraph.add(p4).setTextAlignment(TextAlignment.CENTER);
 
 
-        return footerTable;
+        return footerParagraph;
     }
 
 }
